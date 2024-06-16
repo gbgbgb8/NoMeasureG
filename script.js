@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (navigator.share) {
             try {
                 await navigator.share({
-                    title: 'Argument Against Measure G',
-                    text: 'Read why you should vote NO on Measure G.',
+                    title: 'NO on Measure G',
+                    text: 'Vote NO on Measure G, the Napa tax increase with no end.',
                     url: window.location.href
                 });
                 console.log('Thanks for sharing!');
