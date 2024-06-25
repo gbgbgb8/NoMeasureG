@@ -16,3 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+async function updateVisitorCount() {
+    try {
+      const response = await fetch('https://api.countapi.xyz/hit/nomeasureg.vercel.app/visits');
+      const data = await response.json();
+      document.getElementById('visitor-count').textContent = data.value;
+    } catch (error) {
+      console.error('Error updating visitor count:', error);
+    }
+  }
+  
+  
+  updateVisitorCount();
