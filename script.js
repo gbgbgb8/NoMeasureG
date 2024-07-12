@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const listenButton = document.getElementById('listen-button');
     const narration = document.getElementById('narration');
     const downloadButton = document.getElementById('download-button');
-
+    const printButton = document.getElementById('print-button');
 
     if (shareButton) {
         shareButton.addEventListener('click', async () => {
@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    
     if (downloadButton) {
         downloadButton.addEventListener('click', () => {
             const rtfContent = `{\\rtf1\\ansi\\deff0
@@ -68,6 +67,12 @@ Signature: ___________________________________________\\par
             link.download = 'argument_against_measure_g.rtf';
             link.click();
             URL.revokeObjectURL(link.href);
+        });
+    }
+
+    if (printButton) {
+        printButton.addEventListener('click', () => {
+            window.print();
         });
     }
 });
