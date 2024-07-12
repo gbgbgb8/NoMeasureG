@@ -3,10 +3,12 @@ body {
     background-color: #f9f9f9;
     margin: 0;
     padding: 0;
+    color: #333333;
 }
 
 .container {
-    width: 80%;
+    width: 90%;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     background-color: #ffffff;
@@ -16,38 +18,83 @@ body {
 header {
     text-align: center;
     margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-h1 {
-    color: #333333;
+.headline {
+    font-size: 2.5em;
+    color: #d32f2f;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.sub-headline {
+    font-size: 1.5em;
+    color: #1976d2;
+    margin-bottom: 20px;
 }
 
 .listen-button {
-    background-color: #1a73e8;
+    background-color: #4caf50;
     color: white;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 10px;
     transition: background-color 0.3s;
 }
 
 .listen-button:hover {
-    background-color: #155db1;
+    background-color: #45a049;
+}
+
+.key-points {
+    background-color: #fff9c4;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #fbc02d;
+}
+
+.key-points ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.key-points li {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+main h3 {
+    color: #1976d2;
+    border-bottom: 2px solid #1976d2;
+    padding-bottom: 5px;
 }
 
 main p {
     line-height: 1.6;
-    color: #555555;
+}
+
+.signature-area {
+    margin-top: 30px;
+}
+
+.signature-line {
+    margin-bottom: 20px;
+}
+
+.signature-line span {
+    font-weight: bold;
+}
+
+.signature-line hr {
+    border: none;
+    border-bottom: 1px solid #000;
+    margin-top: 5px;
 }
 
 footer h2 {
-    color: #333333;
+    color: #1976d2;
 }
 
 footer ul {
@@ -61,7 +108,7 @@ footer li {
 
 footer a, footer button {
     text-decoration: none;
-    color: #1a73e8;
+    color: #1976d2;
     background: none;
     border: none;
     padding: 0;
@@ -71,4 +118,20 @@ footer a, footer button {
 
 footer a:hover, footer button:hover {
     text-decoration: underline;
+}
+
+.instructions {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e3f2fd;
+    border-radius: 5px;
+}
+
+.instructions h2 {
+    color: #1976d2;
+    margin-top: 0;
+}
+
+.instructions p {
+    margin-bottom: 10px;
 }
