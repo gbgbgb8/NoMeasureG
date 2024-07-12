@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const shareButton = document.getElementById('share-button');
     const listenButton = document.getElementById('listen-button');
     const narration = document.getElementById('narration');
+    const downloadButton = document.getElementById('download-button');
+
 
     if (shareButton) {
         shareButton.addEventListener('click', async () => {
@@ -35,6 +37,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
         narration.addEventListener('ended', () => {
             listenButton.textContent = 'Listen';
+        });
+    }
+
+    if (downloadButton) {
+        downloadButton.addEventListener('click', () => {
+            const rtfContent = `{\\rtf1\\ansi\\deff0
+{\\fonttbl{\\f0\\froman\\fprq2\\fcharset0 Times New Roman;}}
+{\\colortbl;\\red0\\green0\\blue0;}
+\\viewkind4\\uc1\\pard\\cf1\\f0\\fs24
+Measure G proposes to increase Napa's sales tax from 7.75% to 8.75%, deceptively framed as funding for "Public Safety, City Services, and Critical Infrastructure." However, this measure is fraught with issues that make it detrimental to our community.\\par
+\\par
+Firstly, Measure G lacks a sunset clause, meaning this tax increase can continue indefinitely. This sets a dangerous precedent for future tax measures to become permanent burdens on Napa's taxpayers.\\par
+\\par
+Secondly, the voter guide for Measure G misleads the public by suggesting that the funds will be earmarked for specific needs. In reality, the measure directs the revenue into the City's General Fund, which means the money can be spent on anything, including wasteful projects and administrative bloat. Additionally, budgets are often shuffled creatively to deplete allocations from their intended purposes. For instance, a building maintenance project might be reclassified as Public Safety to free up funds for retired annuitants, part-time help, or other duplicative positions and projects. This lack of transparency and accountability means there are no guarantees the funds will address the critical needs highlighted in the measure's promotional materials.\\par
+\\par
+Moreover, Napa citizens are already overtaxed, and the government's spending is rife with inefficiencies. Increasing the sales tax by an additional 1% only serves to exacerbate the financial strain on households without ensuring that the funds will be used effectively. There is a significant risk that these additional revenues will simply fuel further bureaucratic expansion and mismanagement.\\par
+\\par
+In summary, Measure G imposes an indefinite tax increase, misleads voters about fund allocation, facilitates budget manipulation, and contributes to government waste. I am voting NO on Measure G to protect Napa's taxpayers and ensure responsible government spending.\\par
+\\par
+Printed Name: ________________________________________\\par
+\\par
+Signature: ___________________________________________\\par
+}`;
+
+            const blob = new Blob([rtfContent], { type: 'application/rtf' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'argument_against_measure_g.rtf';
+            link.click();
+            URL.revokeObjectURL(link.href);
         });
     }
 });
