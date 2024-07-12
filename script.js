@@ -40,12 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (printButton) {
-        printButton.addEventListener('click', () => {
-            window.print();
-        });
-    }
-
+    
     if (downloadButton) {
         downloadButton.addEventListener('click', () => {
             const rtfContent = `{\\rtf1\\ansi\\deff0
