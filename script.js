@@ -75,4 +75,24 @@ Signature: ___________________________________________\\par
             window.print();
         });
     }
+
+    function updateCountdown() {
+        const deadline = new Date("2024-11-05T20:00:00").getTime();
+        const now = new Date().getTime();
+        const timeLeft = deadline - now;
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+
+        document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m until voting ends`;
+
+        if (timeLeft < 0) {
+            clearInterval(countdownTimer);
+            document.getElementById("countdown").innerHTML = "Voting has ended";
+        }
+    }
+
+    const countdownTimer = setInterval(updateCountdown, 60000);
+    updateCountdown(); // Initial call
 });
